@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook - Misión 31.5</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            background-color: #5DADE2; /* Azul Gnius */
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 1.8em;
+        }
+        .banner {
+            background-color: #85C1E9; /* Azul más claro */
+            color: #333;
+            padding: 15px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .banner:hover {
+            background-color: #AED6F1;
+        }
+        .banner .title {
+            font-size: 1.3em;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .banner .subtitle {
+            font-size: 1em;
+            margin-top: 8px;
+            border-top: 1px solid #fff;
+            padding-top: 8px;
+            color: #1A5276; /* Azul oscuro texto */
+        }
+        .content {
+            display: none;
+            padding: 15px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            background-color: #EAF2F8; /* Azul muy claro fondo */
+            border-radius: 5px;
+        }
+        .dialogue {
+            background-color: #FEF9E7; /* Amarillo pálido para diálogo */
+            border: 1px solid #FAD7A0;
+            border-radius: 10px;
+            padding: 10px 15px;
+            margin: 15px 0;
+            text-align: left; /* Cambiado a izquierda para mejor lectura */
+            font-style: italic;
+            color: #784212; /* Marrón oscuro texto */
+            position: relative; /* Para el bocadillo */
+            border-left: 5px solid #F39C12; /* Naranja */
+        }
+
+        .dropdown {
+            margin-bottom: 25px;
+            text-align: center; /* Centrar dropdown */
+        }
+        .dropdown label {
+            font-weight: bold;
+            color: #1A5276;
+        }
+        .dropdown select {
+            font-size: 1.1em;
+            padding: 8px 12px;
+            margin-left: 10px;
+            border-radius: 5px;
+            border: 1px solid #85C1E9;
+        }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px;}
+        td { padding: 12px; border: 1px solid #AED6F1; vertical-align: top; }
+        td strong { color: #1A5276; }
+        .level-title { /* Clase específica para el título del nivel */
+             text-align: center;
+             color: #5DADE2;
+             font-size: 1.4em;
+             margin-bottom: 20px;
+        }
+        /* Clases para ocultar/mostrar contenido por nivel */
+        .k1-content, .k2-content, .k3-content { display: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Playbook - Misión 31.5: La Aventura en el Tablero Saltarín</h1>
+        </div>
+
+        <div class="dropdown">
+            <label for="class-level">Nivel:</label>
+            <select id="class-level" onchange="updateContent()">
+                <option value="K1">K1 (3 años)</option>
+                <option value="K2">K2 (4 años)</option>
+                <option value="K3">K3 (5 años)</option>
+            </select>
+        </div>
+
+        <h2 id="selected-level" class="level-title">Nivel: K1 (3 años)</h2>
+
+        <!-- ............................................Aquí empezarán las actividades........................................... -->
+
+<!-- Actividad 0: Revisión de Materiales -->
+<div id="activity-0" class="activity">
+    <div class="banner" onclick="toggleContent('revision_materiales')">
+        <div class="title">📚 Actividad 0: Revisión de Materiales</div>
+        <div class="subtitle">Objetivo: Asegurarse de que todos los materiales necesarios para la clase estén disponibles y preparados antes de que lleguen los niños.</div>
+    </div>
+    <div id="revision_materiales" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (N/A):</strong> Revisa que tengas listos los materiales indicados en la **DIAPOSITIVA 1**: 1 Kinderbot y 10 iBricks por cada pareja. Asegúrate de que los Kinderbots estén cargados.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> N/A</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 1: Bienvenida e Introducción -->
+<div id="activity-1" class="activity">
+    <div class="banner" onclick="toggleContent('bienvenida')">
+        <div class="title">🎉 Actividad 1: ¡Kinderbot quiere Jugar! ⏰ Tiempo: 1 minuto</div>
+        <div class="subtitle">Objetivo: Conectar con habilidades previas (avanzar, girar) e introducir la idea de un juego de tablero simple.</div>
+    </div>
+    <div id="bienvenida" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (0.5 minutos):</strong> Reproduce la **DIAPOSITIVA 2** “Bienvenida”. Saluda y pregunta qué aprendió Kinderbot la última vez.</td>
+                <td>
+                    <div class="dialogue">
+                        "¡Equipoooo CODE SQUAD! ¡Qué alegría verlos! ¿Y adivinen quién está súper emocionado también? ¡Kinderbot! ¿Recuerdan que la última vez le enseñamos a avanzar y a girar para hacer entregas especiales? ¡Pues lo aprendió tan bien que ahora quiere... ¡JUGAR! Sí, ¡quiere jugar a un juego de tablero!"
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (0.5 minutos):</strong> Reproduce la **DIAPOSITIVA 3** "Gimnasio CODE SQUAD". Explica que para jugar, necesitan planear los movimientos.</td>
+                <td>
+                     <div class="dialogue">
+                        "Pero para jugar en un tablero, no podemos movernos a lo loco, ¿verdad? ¡Necesitamos pensar cuántos pasos dar! Nuestros cerebros tienen que estar listos para contar y planear. Así que, ¡directo al Gimnasio Cerebral! La canción de hoy nos ayudará a practicar cómo seguir una secuencia de pasos... ¡justo lo que necesitamos para jugar con Kinderbot!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 2: Baile de Algoritmos -->
+<div id="activity-2" class="activity">
+    <div class="banner" onclick="toggleContent('baile-algoritmos')">
+        <div class="title">🎶 Actividad 2: Baile de Algoritmos ⏰ Tiempo: 2 minutos</div>
+        <div class="subtitle">Objetivo: Practicar secuencias de pasos y giros, preparando para la programación del movimiento en el tablero.</div>
+    </div>
+    <div id="baile-algoritmos" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (2 minutos):</strong> Reproduce la **DIAPOSITIVA 4** “Baile de Algoritmos”. Guía el baile, contando los pasos adelante si la canción lo permite.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Arriba, CODE SQUAD! ¡Es hora del Baile de Algoritmos! Hoy vamos a contar mientras bailamos. Si la canción dice 'Adelante, adelante', ¡contamos uno, dos! Si dice 'Gira', ¡giramos! ¡Es como planear los movimientos de un juego! ¡Sigan la música y cuenten los pasos! ¡Prepárense para jugar!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 3: Planteamiento del Problema - El Tablero Saltarín -->
+<div id="activity-3" class="activity">
+    <div class="banner" onclick="toggleContent('planteamiento-problema')">
+        <div class="title">🐸 Actividad 3: ¡El Juego del Tablero Saltarín! ⏰ Tiempo: 3 minutos</div>
+        <div class="subtitle">Objetivo: Presentar la historia del juego, construir el tablero lineal con iBricks y definir el reto de llegar a una casilla específica.</div>
+    </div>
+    <div id="planteamiento-problema" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (1.5 minutos):</strong> Reproduce la **DIAPOSITIVA 5**. Narra la idea del juego: cruzar el río usando nenúfares (iBricks).</td>
+                <td>
+                     <div class="dialogue">
+                        "¡Genios, miren esto! Kinderbot imaginó un juego súper divertido: ¡El Tablero Saltarín de Nenúfares! Imaginen que estos bloques gigantes (iBricks) son nenúfares flotando en un río tranquilo. ¡Son como las casillas de un tablero de juego! Kinderbot quiere ser una ranita saltarina y cruzar de un nenúfar a otro para llegar a la otra orilla donde hay una ¡mosca de chocolate gigante! (Risas)"
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (1.5 minutos):</strong> Reproduce la **DIAPOSITIVA 6**. Explica el reto: construir el camino de nenúfares (iBricks en línea) y programar a Kinderbot para que salte (avance) un número exacto de casillas/nenúfares.</td>
+                <td>
+                     <div class="dialogue">
+                        "¡Aquí viene nuestro desafío, equipo! Primero, vamos a construir el camino de nenúfares. Pondremos varios bloques gigantes en fila, uno detrás de otro, ¡como un puente sobre el río! (Demuestra colocar 4-5 iBricks en línea). Luego, le diremos a Kinderbot EXACTAMENTE cuántos saltos (pasos adelante) tiene que dar para llegar a un nenúfar específico. ¡No puede saltar ni más ni menos, o se caerá al agua imaginaria! ¿Listos para construir el Tablero Saltarín y programar los saltos de Kinderbot-Ranita?"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 4: Formación de Parejas -->
+<div id="activity-4" class="activity">
+    <div class="banner" onclick="toggleContent('formacion-parejas')">
+        <div class="title">🤝 Actividad 4: ¡Constructores y Programadores! ⏰ Tiempo: 3 minutos</div>
+        <div class="subtitle">Objetivo: Organizar en parejas para construir el tablero y planificar la secuencia de saltos.</div>
+    </div>
+    <div id="formacion-parejas" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (2 minutos):</strong> Reproduce la **DIAPOSITIVA 7** “Formación de Equipos”. Explica que construir y programar juntos es más divertido. Forma las parejas.</td>
+                <td>
+                     <div class="dialogue">
+                        "¡Pequeños constructores y programadores! ¡Crear nuestro propio juego de tablero es un gran trabajo! Y como todos los grandes trabajos, ¡es mucho mejor hacerlo en equipo! Uno puede poner los bloques-nenúfares mientras el otro piensa cuántos saltos necesita Kinderbot. ¡Así que, a formar nuestros Equipos Constructores! ¡Busquen a su pareja para esta misión juguetona!"
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (1 minuto):</strong> Verifica que todos tengan pareja. Anímales a planificar juntos la construcción y la programación.</td>
+                <td>
+                     <div class="dialogue">
+                        "¿Listos, Equipos Constructores? ¡Genial! Ahora, pónganse de acuerdo. ¿Cuántos bloques van a poner en fila para hacer el camino? ¿Dónde va a empezar Kinderbot-Ranita? ¿Y a qué nenúfar quieren que llegue? ¡Hablen y planeen juntos! ¡El juego está por comenzar!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 5: Reto de Codificación - ¡Saltos Programados! -->
+<div id="activity-5" class="activity">
+    <div class="banner" onclick="toggleContent('reto-codificacion')">
+        <div class="title">⌨️ Actividad 5: ¡Programando los Saltos de la Ranita! ⏰ Tiempo: 6 minutos</div>
+        <div class="subtitle">Objetivo: Construir el tablero lineal y programar la secuencia de pasos 'Adelante' (y giros para K2/K3) según el objetivo de casilla.</div>
+    </div>
+    <div id="reto-codificacion" class="content">
+        <table>
+            <!-- Paso Común: Repasar Botones -->
+             <tr>
+                <td><strong>PASO 1 (1 minuto):</strong> Reproduce la **DIAPOSITIVA 8** "Recordando a Kinderbot". Repasa botones Adelante y Girar.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Equipos! Recordemos cómo habla Kinderbot. Flecha Adelante significa ¡Salta al siguiente nenúfar! Y la Flecha Curva significa ¡Gira para mirar! ¡Hoy usaremos principalmente la flecha Adelante para los saltos! ¡Vamos a contar bien!"
+                    </div>
+                </td>
+            </tr>
+            <!-- Contenido Específico por Nivel -->
+             <!-- K1 -->
+            <tr class="k1-content">
+                <td><strong>PASO 2 - K1 (5 minutos):</strong> Reproduce la **DIAPOSITIVA 9** "Misión K1: Dos Saltitos". Guía para construir un camino de 3-4 iBricks y programar 2 pasos Adelante para llegar al segundo nenúfar.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Equipo K1! ¡Construyan su camino con 3 o 4 nenúfares (bloques)! ¡Uno detrás de otro! (Demuestra). ¡Perfecto! Ahora, Kinderbot-Ranita quiere llegar al ¡SEGUNDO nenúfar! ¿Cuántos saltos necesita? ¡Dos! ¡Muy bien! Entonces, presionen la flecha 'Adelante' ¡DOS veces! Una... dos. ¡Preparen el código para dos saltos! ¡No presionen 'Go' todavía!"
+                    </div>
+                </td>
+            </tr>
+             <!-- K2 -->
+             <tr class="k2-content">
+                <td><strong>PASO 2 - K2 (5 minutos):</strong> Reproduce la **DIAPOSITIVA 10** "Misión K2: Tres Saltos y Giro". Guía para construir camino de 4-5 iBricks, programar 3 pasos Adelante y 1 Giro al final.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Equipos K2! ¡Su camino de nenúfares necesita 4 o 5 bloques en fila! (Demuestra). ¡Genial! La misión: ¡llegar al TERCER nenúfar y luego girar para celebrar! ¿Cuántos saltos son para llegar al tercero? ¡Tres! Presionen 'Adelante' ¡TRES veces! Una, dos, tres. Y para celebrar al llegar, ¡presionen 'Girar' UNA vez! Código listo: Adelante, Adelante, Adelante, Girar. ¡Preparen, pero no activen 'Go'!"
+                    </div>
+                </td>
+            </tr>
+            <!-- K3 -->
+             <tr class="k3-content">
+                <td><strong>PASO 2 - K3 (5 minutos):</strong> Reproduce la **DIAPOSITIVA 11** "Misión K3: ¡Salto con Giro!". Guía para construir camino de 5 iBricks, programar 4 pasos Adelante con 1 Giro en medio (ej. A, A, G, A).</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Desafío K3! ¡Construyan un camino largo con 5 nenúfares! (Demuestra). La mosca de chocolate está en el ¡CUARTO nenúfar! Pero, ¡cuidado! ¡Hay un remolino imaginario después del segundo nenúfar! Así que el código es: Salta (Adelante), Salta (Adelante), ¡GIRA para esquivar el remolino!, Salta (Adelante) para llegar al cuarto nenúfar. ¡Son 4 pasos en total! (Demuestra A, A, G, A). ¡Planean bien la secuencia! ¡Preparen el código, sin presionar 'Go'!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 6: ¡A Jugar en el Tablero! -->
+<div id="activity-6" class="activity">
+    <div class="banner" onclick="toggleContent('probando-tablero')">
+        <div class="title">🚀 Actividad 6: ¡Que Empiece el Juego Saltarín! ⏰ Tiempo: 5 minutos</div>
+        <div class="subtitle">Objetivo: Ejecutar la secuencia programada en el tablero de iBricks, verificando si Kinderbot llega al objetivo.</div>
+    </div>
+    <div id="probando-tablero" class="content">
+        <table>
+             <!-- K1 -->
+            <tr class="k1-content">
+                <td><strong>PASO 1 - K1 (5 minutos):</strong> Reproduce la **DIAPOSITIVA 12** "¡Éxito K1!". Anima a colocar a Kinderbot al inicio y presionar 'Go'. Observar si avanza 2 nenúfares. Celebrar.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Equipo K1! ¡Pongan a Kinderbot-Ranita en el primer nenúfar! ¿Listos con su código de DOS saltos? ¡Presionen 'Go'! ¡Miren cómo salta! Uno... ¡dos! ¿Llegó al segundo nenúfar? ¡SIIII! ¡Lo lograron! ¡Ayudaron a la ranita a dar dos saltos! ¡Genial!"
+                    </div>
+                </td>
+            </tr>
+             <!-- K2 -->
+             <tr class="k2-content">
+                 <td><strong>PASO 1 - K2 (5 minutos):</strong> Reproduce la **DIAPOSITIVA 13** "¡Éxito K2!". Anima a colocar a Kinderbot al inicio y presionar 'Go'. Observar si avanza 3 nenúfares y gira al final. Celebrar.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Equipos K2! ¡Kinderbot-Ranita al inicio del río! ¿Listos con su código de TRES saltos y UN giro? ¡Presionen 'Go'! ¡Contemos los saltos! Uno... dos... tres... ¿Llegó al tercer nenúfar? ¡Y... ¡GIRÓ! ¡Perfecto! ¡Celebró su llegada! ¡Fantástico trabajo, programadores!"
+                    </div>
+                </td>
+            </tr>
+             <!-- K3 -->
+             <tr class="k3-content">
+                 <td><strong>PASO 1 - K3 (5 minutos):</strong> Reproduce la **DIAPOSITIVA 14** "¡Éxito K3!". Anima a colocar a Kinderbot al inicio y presionar 'Go'. Observar si sigue la secuencia A-A-G-A y llega al cuarto nenúfar. Si falla, animar a depurar. Celebrar.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Expertos K3! ¡Kinderbot-Ranita preparada! ¿Listos con el código 'Salta, Salta, Gira, Salta'? ¡Presionen 'Go'! ¡Miremos con atención! Salta (1), Salta (2), ¡GIRA!... Salta (3)... ¿Llegó al CUARTO nenúfar? ¡SIIII! ¡Esquivó el remolino y atrapó la mosca de chocolate! ¡Si no llegó exacto, recuerden que pueden usar 'Clear' y ajustar! ¡Son increíbles resolviendo desafíos!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 7: Mensaje del Cuartel (Omitida para Misión 31.5) -->
+
+<!-- Actividad 8: Conclusión y Reflexión -->
+<div id="activity-8" class="activity">
+    <div class="banner" onclick="toggleContent('conclusion-reflexion')">
+        <div class="title">🏁 Actividad 8: ¡Juego Terminado y Reflexión! ⏰ Tiempo: 5 minutos</div>
+        <div class="subtitle">Objetivo: Celebrar el éxito del juego, reforzar la habilidad de secuenciar un número específico de pasos y reflexionar sobre la planificación.</div>
+    </div>
+    <div id="conclusion-reflexion" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (5 minutos):</strong> Reproduce la **DIAPOSITIVA 15** "¡Misión Cumplida!". Cierra la historia (Kinderbot llegó a su destino/ganó el juego). Realiza preguntas de reflexión.</td>
+                <td>
+                    <div class="dialogue">
+                        "¡BRAVOOO, CODE SQUAD! ¡Gracias a ustedes, Kinderbot-Ranita cruzó el río de nenúfares y llegó a su destino! ¡Qué juego tan divertido inventamos y programamos juntos! Han demostrado que saben contar pasos y dar instrucciones precisas. Pensemos un poquito:
+1. ¿Qué hicimos para que Kinderbot avanzara un número exacto de nenúfares? (Presionamos 'Adelante' ese número de veces).
+2. ¿Para qué usamos los bloques gigantes hoy? (¡Para hacer el tablero/camino de nenúfares!)
+3. ¿Fue importante planear cuántos saltos necesitaba Kinderbot antes de presionar 'Go'? ¿Por qué?
+¡Estoy súper feliz de ver cómo aprenden a programar jugando! ¡Kinderbot también está feliz! ¡Nos vemos en la próxima aventura, genios jugadores!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+        <!-- ............................................Aquí terminarán las actividades........................................... -->
+
+    </div>
+
+<script>
+    function toggleContent(id) {
+        var content = document.getElementById(id);
+        var parentActivity = content.closest('.activity');
+        if (content.style.display === "block") {
+            content.style.display = "none";
+            parentActivity.classList.remove('active');
+        } else {
+            content.style.display = "block";
+            parentActivity.classList.add('active');
+        }
+    }
+
+    function updateContent() {
+        var level = document.getElementById("class-level").value;
+        var levelText = document.getElementById("class-level").options[document.getElementById("class-level").selectedIndex].text;
+        document.getElementById("selected-level").innerText = "Nivel: " + levelText;
+
+        var k1Contents = document.querySelectorAll('.k1-content');
+        var k2Contents = document.querySelectorAll('.k2-content');
+        var k3Contents = document.querySelectorAll('.k3-content');
+
+        k1Contents.forEach(function(el) { el.style.display = 'none'; });
+        k2Contents.forEach(function(el) { el.style.display = 'none'; });
+        k3Contents.forEach(function(el) { el.style.display = 'none'; });
+
+        var selectedContents = document.querySelectorAll('.' + level.toLowerCase() + '-content');
+        selectedContents.forEach(function(el) {
+             el.style.display = 'table-row';
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        updateContent();
+    });
+</script>
+
+</body>
+</html>
